@@ -33,6 +33,18 @@ jobs:
       - name: Run a multi-line script
         run: |
           git clone https://gitlab.com/gitlab-org/omnibus-gitlab.git
-          cd omnibus-gitlab
-          docker build -t gitlab .
+          # cd omnibus-gitlab
+          # docker build -t gitlab .
+          # docker images
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./omnibus-gitlab
+          file: ./Dockerfile  # Path to your Dockerfile (if it's in the root, use './Dockerfile')
+          push: false  # Push the image after building
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
           docker images
