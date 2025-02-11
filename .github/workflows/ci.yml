@@ -37,7 +37,7 @@ jobs:
 
       # Step 3: Clone the omnibus-gitlab repository from GitLab
       - name: Clone omnibus-gitlab repository
-        run: git clone https://gitlab.com/gitlab-org/omnibus-gitlab.git
+        run: git clone https://gitlab.com/gitlab-org/omnibus-gitlab.git gitlab
 
       # # Step 4: Navigate into the omnibus-gitlab directory
       # - name: Enter omnibus-gitlab directory
@@ -46,6 +46,7 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
-          cd omnibus-gitlab
+          cd gitlab
+          ls
           docker buildx build -t pylab/gitlab .
           docker images
