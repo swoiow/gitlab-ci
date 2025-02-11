@@ -39,5 +39,5 @@ jobs:
       - name: Build Docker image
         run: |
           cd omnibus-gitlab
-          docker build .
+          docker buildx build -t pylab/gitlab .
           docker images
