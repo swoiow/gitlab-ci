@@ -46,7 +46,7 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
-          cd gitlab/docker
+          cd gitlab
           ls
-          docker buildx build -t pylab/gitlab .
+          docker buildx build -t pylab/gitlab ./docker
           docker images
