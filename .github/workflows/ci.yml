@@ -38,6 +38,9 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
+          wget https://github.com/docker/buildx/releases/download/v0.20.1/buildx-v0.20.1.darwin-arm64 -O /usr/local/bin/docker-buildx
+          chmod +x /usr/local/bin/docker-buildx
+          docker buildx create --use
           cd omnibus-gitlab
           docker buildx build -t pylab/gitlab .
           docker images
