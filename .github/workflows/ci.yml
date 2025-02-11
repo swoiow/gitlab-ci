@@ -39,5 +39,5 @@ jobs:
       - name: Build Docker image
         run: |
           cd omnibus-gitlab
-          DOCKER_BUILDKIT=1 docker build .
+          docker build .
           docker images
