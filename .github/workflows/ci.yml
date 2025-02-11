@@ -31,9 +31,9 @@ jobs:
       - name: Clone omnibus-gitlab repository
         run: git clone https://gitlab.com/gitlab-org/omnibus-gitlab.git
 
-      # Step 4: Navigate into the omnibus-gitlab directory
-      - name: Enter omnibus-gitlab directory
-        run: cd omnibus-gitlab
+      # # Step 4: Navigate into the omnibus-gitlab directory
+      # - name: Enter omnibus-gitlab directory
+      #   run: cd omnibus-gitlab
 
       # Step 5: Build the Docker image
       - name: Build Docker image
